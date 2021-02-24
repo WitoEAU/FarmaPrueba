@@ -52,6 +52,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Categoria.cs" />
+    <Compile Include="CategoriasBL.cs" />
     <Compile Include="ContextoP.cs" />
     <Compile Include="pluralizingTableNameConvention.cs" />
     <Compile Include="Producto.cs" />

@@ -21,7 +21,7 @@ namespace FarmaPrueba.BL
             return _contexto.Productos.ToList();
         }
 
-        public void GuardarProducto (Producto producto)
+        public void GuardarProducto(Producto producto)
         {
             if (producto.ID == 0)
             {
