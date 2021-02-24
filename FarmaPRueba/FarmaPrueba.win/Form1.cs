@@ -9,6 +9,9 @@ namespace FarmaPrueba.win
         public Form1()
         {
             InitializeComponent();
+            var productosBL = new ProductosBL();
+            var listadeProductos = productosBL.ObtenerProductos();
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -20,6 +23,11 @@ namespace FarmaPrueba.win
             {
                 MessageBox.Show(producto.Descripcion);
             }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
