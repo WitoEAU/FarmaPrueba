@@ -1,7 +1,6 @@
 ﻿using FarmaPueba.BL;
 using System.Collections.Generic;
 using System.Linq;
-using System;
 
 namespace FarmaPrueba.BL
 {
@@ -17,20 +16,28 @@ namespace FarmaPrueba.BL
         }
     
       public List<Producto> ObtenerProductos()
-        {        
-            return _contexto.Productos.ToList();
+        {
+
+            ListadeProductos = _contexto.Productos
+                .Include("Categoria")
+                .ToList();
+
+            return ListadeProductos;
         }
 
         public void GuardarProducto(Producto producto)
         {
-            if (producto.ID == 0)
+            if (producto.Id == 0)
             {
                 _contexto.Productos.Add(producto);
             } else
             {
-                var productoExistente = _contexto.Productos.Find(producto.ID);
+                var productoExistente = _contexto.Productos.Find(producto.Id);
                 productoExistente.Descripcion = producto.Descripcion;
+                productoExistente.CategoriaId = producto.CategoriaId;
                 productoExistente.Precio = producto.Precio;
+                productoExistente.Activo = producto.Activo;
+
             }
             
             _contexto.SaveChanges();
@@ -38,7 +45,9 @@ namespace FarmaPrueba.BL
 
         public Producto ObtenerProducto(int id)
         {
-            var producto = _contexto.Productos.Find(id);
+            var producto = _contexto.Productos
+            .Include("Categoria").FirstOrDefault(p => p.Id == id);
+
             return producto;
 
         }
