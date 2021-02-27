@@ -1,4 +1,5 @@
 ﻿using FarmaPueba.BL;
+using System.ComponentModel.DataAnnotations;
 
 namespace FarmaPrueba.BL
 {
@@ -12,7 +13,14 @@ namespace FarmaPrueba.BL
         }
 
         public int Id { get; set; }
+
+        [Required(ErrorMessage = "Ingrese la Descripción")]
+        [MinLength(3, ErrorMessage = "Ingrese minimo 3 caracteres")]
+        [MaxLength(20, ErrorMessage = "Ingrese un maximo de 20 caracteres")]
         public string Descripcion { get; set; }
+
+        [Required(ErrorMessage = "Ingrese el precio")]
+        [Range(0, 10000, ErrorMessage = "Ingrese un precio entre 0 y 10000")]
         public double Precio { get; set; }
         public int CategoriaId { get; set; }
         public Categoria Categoria { get; set; }
