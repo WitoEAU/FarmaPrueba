@@ -1,5 +1,6 @@
 ﻿using FarmaPrueba.BL;
 using FarmaPueba.BL;
+using System.Web;
 using System.Web.Mvc;
 
 namespace FarmaPrueba.webAdmin.Controllers
@@ -36,7 +37,7 @@ namespace FarmaPrueba.webAdmin.Controllers
         }
 
         [HttpPost]
-        public ActionResult Crear(Producto producto)
+        public ActionResult Crear(Producto producto, HttpPostedFileBase imagen)
         {
             if (ModelState.IsValid)
             {
@@ -46,7 +47,12 @@ namespace FarmaPrueba.webAdmin.Controllers
                     return View(producto);
                 }
 
-                _productosBL.GuardarProducto(producto);
+                if (imagen != null)
+                {
+                    producto.UrlImagen = GuardarImagen(imagen);
+                }
+
+                _productosBL.GuardarProducto(producto); 
 
                 return RedirectToAction("Index");
             }
@@ -108,5 +114,14 @@ namespace FarmaPrueba.webAdmin.Controllers
             _productosBL.EliminarProducto(producto.Id);
             return RedirectToAction ("Index");
         }
+
+        private string GuardarImagen(HttpPostedFileBase imagen)
+        {
+            string path = Server.MapPath("~/Imagenes/" + imagen.FileName);
+            imagen.SaveAs(path);
+
+            return "/Imagenes/" + imagen.FileName;
+        }
+
     }
 }

@@ -14,6 +14,7 @@ namespace FarmaPrueba.BL
 
         public int Id { get; set; }
 
+        [Display(Name = "Descripción")]
         [Required(ErrorMessage = "Ingrese la Descripción")]
         [MinLength(3, ErrorMessage = "Ingrese minimo 3 caracteres")]
         [MaxLength(20, ErrorMessage = "Ingrese un maximo de 20 caracteres")]
@@ -24,6 +25,9 @@ namespace FarmaPrueba.BL
         public double Precio { get; set; }
         public int CategoriaId { get; set; }
         public Categoria Categoria { get; set; }
+
+        [Display(Name = "Imagen")]
+        public string UrlImagen { get; set; }
         public bool Activo { get; set; }
 
 
