@@ -73,7 +73,7 @@ namespace FarmaPrueba.webAdmin.Controllers
         }
 
         [HttpPost]
-        public ActionResult Editar(Producto producto)
+        public ActionResult Editar(Producto producto, HttpPostedFileBase imagen)
         {
             if (ModelState.IsValid)
             {
@@ -82,6 +82,11 @@ namespace FarmaPrueba.webAdmin.Controllers
                     ModelState.AddModelError("CategoriaId", "Seleccione una categoria");
                     return View(producto);
                 }
+
+                if (imagen != null)
+                    {
+                    producto.UrlImagen = GuardarImagen(imagen);
+                    }
 
                 _productosBL.GuardarProducto(producto);
 
