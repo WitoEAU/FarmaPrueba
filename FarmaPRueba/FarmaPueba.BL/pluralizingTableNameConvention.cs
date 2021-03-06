@@ -1,4 +1,4 @@
-﻿namespace FarmaPueba.BL
+﻿namespace FarmaPrueba.BL
 {
     internal class pluralizingTableNameConvention
     {

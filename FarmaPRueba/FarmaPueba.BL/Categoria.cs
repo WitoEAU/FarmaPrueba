@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace FarmaPueba.BL
+namespace FarmaPrueba.BL
 {
     public class Categoria
     {

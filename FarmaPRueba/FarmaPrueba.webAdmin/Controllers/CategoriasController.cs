@@ -1,4 +1,4 @@
-﻿using FarmaPueba.BL;
+﻿using FarmaPrueba.BL;
 using System.Web.Mvc;
 
 namespace FarmaPrueba.webAdmin.Controllers

@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace FarmaPueba.BL
+namespace FarmaPrueba.BL
 {
     public class CategoriasBL
     {

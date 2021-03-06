@@ -1,5 +1,4 @@
-﻿using FarmaPueba.BL;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace FarmaPrueba.BL
 {
