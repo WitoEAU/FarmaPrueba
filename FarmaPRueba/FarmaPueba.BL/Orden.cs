@@ -1,5 +1,4 @@
-﻿using FarmaPrueba.BL;
-using System;
+﻿using System;
 using System.Collections.Generic;
 
 namespace FarmaPrueba.BL
@@ -19,6 +18,7 @@ namespace FarmaPrueba.BL
         {
             Activo = true;
             Fecha = DateTime.Now;
+            ListadeOrdenDetalle = new List<OrdenDetalle>();
         }
 
     }
@@ -30,7 +30,8 @@ namespace FarmaPrueba.BL
         public Orden Orden { get; set; }
 
         public int ProductoId { get; set; }
-        public int Producto { get; set; }
+        public Producto Producto { get; set; }
+
 
         public int Cantidad { get; set; }
         public double Precio { get; set; }
