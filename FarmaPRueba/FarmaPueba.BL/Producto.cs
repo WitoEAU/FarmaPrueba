@@ -16,7 +16,7 @@ namespace FarmaPrueba.BL
         [Display(Name = "Descripción")]
         [Required(ErrorMessage = "Ingrese la Descripción")]
         [MinLength(3, ErrorMessage = "Ingrese minimo 3 caracteres")]
-        [MaxLength(20, ErrorMessage = "Ingrese un maximo de 20 caracteres")]
+        [MaxLength(30, ErrorMessage = "Ingrese un maximo de 20 caracteres")]
         public string Descripcion { get; set; }
 
         [Required(ErrorMessage = "Ingrese el precio")]
