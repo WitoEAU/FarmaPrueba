@@ -1,7 +1,124 @@
-﻿
+﻿@model List<FarmaPrueba.BL.Producto>
+
+
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Inicio";
 }
 
-<h2>Bienvenido a FarmaPrueba</h2>
+
+
+
+
+
+<section>
+    <div class="container">
+        <div class="heading">
+            <h2 >Productos</h2>
+        </div>
+    
+
+
+        <div class="row">
+       
+            <div class="col-sm-12">
+                <ul class="selecton brdr-b-primary mb-70">
+                    <li><a class="active" href="#" data-select="*"></a></li>
+                    <li><a href="#" data-select="suplementos"><b>SUPLEMENTOS</b></a></li>
+                    <li><a href="#" data-select="medicamentos"><b>MEDICAMENTOS</b></a></li>
+                    <li><a href="#" data-select="bioseguridad"><b>BIOSEGURIDAD</b></a></li>
+                    <li><a href="#" data-select="higiene"><b>HIGIENE</b></a></li>
+                </ul>
+            </div>
+        </div>
+      
+
+
+
+
+
+
+       @foreach (var producto in Model
+              .Where(r => r.Categoria.Descripcion == "Suplementos"))
+
+
+       {
+        <div class="row">
+            <div class="col-md-6 food-menu suplementos">
+                <div class="sided-90x mb-30 ">
+                    <div class="s-left"><img class="br-3" src="@(ViewBag.adminWebsiteUrl + producto.UrlImagen)" alt=""></div><!--s-left-->
+                    <div class="s-right">
+                        <h5 class="mb-10"><b>@producto.Descripcion</b><b class="color-primary float-right">L. @producto.Precio</b></h5>
+                        <p class="pr-70">@producto.Categoria.Descripcion</p>
+                    </div><!--s-right-->
+                </div><!-- sided-90x -->
+            </div><!-- food-menu -->
+        </div><!-- row -->
+       }
+
+
+        @foreach (var producto in Model
+                 .Where(r => r.Categoria.Descripcion == "Medicamentos"))
+
+
+        {
+            <div class="row">
+                <div class="col-md-6 food-menu medicamentos">
+                    <div class="sided-90x mb-30 ">
+                        <div class="s-left"><img class="br-3" src="@(ViewBag.adminWebsiteUrl + producto.UrlImagen)" alt=""></div><!--s-left-->
+                        <div class="s-right">
+                            <h5 class="mb-10"><b>@producto.Descripcion</b><b class="color-primary float-right">L. @producto.Precio</b></h5>
+                            <p class="pr-70">@producto.Categoria.Descripcion</p>
+                        </div><!--s-right-->
+                    </div><!-- sided-90x -->
+                </div><!-- food-menu -->
+            </div><!-- row -->
+        }
+
+
+
+         @foreach (var producto in Model
+                        .Where(r => r.Categoria.Descripcion == "Bioseguridad"))
+
+
+       {
+        <div class="row">
+            <div class="col-md-6 food-menu bioseguridad">
+                <div class="sided-90x mb-30 ">
+                    <div class="s-left"><img class="br-3" src="@(ViewBag.adminWebsiteUrl + producto.UrlImagen)" alt=""></div><!--s-left-->
+                    <div class="s-right">
+                        <h5 class="mb-10"><b>@producto.Descripcion</b><b class="color-primary float-right">L. @producto.Precio</b></h5>
+                        <p class="pr-70">@producto.Categoria.Descripcion</p>
+                    </div><!--s-right-->
+                </div><!-- sided-90x -->
+            </div><!-- food-menu -->
+        </div><!-- row -->
+      }
+
+
+
+        @foreach (var producto in Model
+                  .Where(r => r.Categoria.Descripcion == "Higiene"))
+
+
+        {
+            <div class="row">
+                <div class="col-md-6 food-menu higiene">
+                    <div class="sided-90x mb-30 ">
+                        <div class="s-left"><img class="br-3" src="@(ViewBag.adminWebsiteUrl + producto.UrlImagen)" alt=""></div><!--s-left-->
+                        <div class="s-right">
+                            <h5 class="mb-10"><b>@producto.Descripcion</b><b class="color-primary float-right">L. @producto.Precio</b></h5>
+                            <p class="pr-70">@producto.Categoria.Descripcion</p>
+                        </div><!--s-right-->
+                    </div><!-- sided-90x -->
+                </div><!-- food-menu -->
+            </div><!-- row -->
+        }
+
+
+
+
+
+        <h6 class="center-text mt-40 mt-sm-20 mb-30"><a href="#" class="btn-primaryc plr-25"><b>SEE TODAYS MENU</b></a></h6>
+    </div><!-- container -->
+</section>
 

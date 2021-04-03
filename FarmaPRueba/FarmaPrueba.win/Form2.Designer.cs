@@ -52,7 +52,7 @@
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3});
             this.listadeVentasPorProductoDataGridView.DataSource = this.listadeVentasPorProductoBindingSource;
-            this.listadeVentasPorProductoDataGridView.Location = new System.Drawing.Point(22, 128);
+            this.listadeVentasPorProductoDataGridView.Location = new System.Drawing.Point(22, 41);
             this.listadeVentasPorProductoDataGridView.Name = "listadeVentasPorProductoDataGridView";
             this.listadeVentasPorProductoDataGridView.Size = new System.Drawing.Size(287, 172);
             this.listadeVentasPorProductoDataGridView.TabIndex = 1;
@@ -77,7 +77,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(275, 41);
+            this.button1.Location = new System.Drawing.Point(234, 12);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 2;
@@ -89,11 +89,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(488, 303);
+            this.ClientSize = new System.Drawing.Size(319, 220);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.listadeVentasPorProductoDataGridView);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "Form2";
-            this.Text = "Form2";
+            this.Text = "Productos";
+            this.UseWaitCursor = true;
             this.Load += new System.EventHandler(this.Form2_Load);
             ((System.ComponentModel.ISupportInitialize)(this.listadeVentasPorProductoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.listadeVentasPorProductoDataGridView)).EndInit();
